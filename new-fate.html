@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FateSPINNER Create New</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;700;800&family=Spline+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-page="create-new">
+    <nav>
+        <a href="./index.html" class="logo"><img src="./img/Group.png" alt="">Fate<span>SPINNER</span></a>
+        <ul>
+            <li><a href="./index.html" class="nav-link">My Wheel</a></li>
+            <li><a href="./persets.html" class="nav-link">Presets</a></li>
+            <li><a href="./history.html" class="nav-link">History</a></li>
+            <li><a href="./new-fate.html" class="nav-link nav-link-active">Create New</a></li>
+        </ul>
+        <button class="new-fate" type="button" data-preset-link="./index.html">Spin New Fate</button>
+    </nav>
+
+    <main class="create-main">
+        <section class="create-page">
+            <header class="create-header">
+                <h1 class="create-title">Create New</h1>
+                <p class="create-subtitle">Design a custom wheel for your unique decisions.</p>
+            </header>
+
+            <form class="create-card" id="create-wheel-form">
+                <div class="create-grid">
+                    <label class="create-field">
+                        <span class="create-label">Wheel Name</span>
+                        <input class="create-input" id="wheel-name-input" name="wheel_name" type="text" placeholder="e.g., Weekend Destinations" required>
+                    </label>
+
+                    <label class="create-field">
+                        <span class="create-label">Category</span>
+                        <input class="create-input" id="wheel-category-input" name="category" type="text" value="Life Decisions" placeholder="Life Decisions">
+                    </label>
+                </div>
+
+                <label class="create-field create-field-full">
+                    <span class="create-label">Description</span>
+                    <input class="create-input" id="wheel-description-input" name="description" type="text" placeholder="What kind of decision is this for?">
+                </label>
+
+                <label class="create-field create-field-full">
+                    <span class="create-label">Options (One Per Line)</span>
+                    <textarea class="create-textarea" id="wheel-options-input" name="options" placeholder="Option 1&#10;Option 2&#10;Option 3..." required></textarea>
+                </label>
+
+                <fieldset class="create-color-picker">
+                    <legend class="create-label">Accent Color</legend>
+                    <div class="create-colors">
+                        <label class="create-color-option">
+                            <input type="radio" name="accent_color" value="#ff6b35" checked>
+                            <span class="create-color-swatch create-color-swatch-orange"></span>
+                        </label>
+                        <label class="create-color-option">
+                            <input type="radio" name="accent_color" value="#4a6cff">
+                            <span class="create-color-swatch create-color-swatch-blue"></span>
+                        </label>
+                        <label class="create-color-option">
+                            <input type="radio" name="accent_color" value="#ffd166">
+                            <span class="create-color-swatch create-color-swatch-yellow"></span>
+                        </label>
+                        <label class="create-color-option">
+                            <input type="radio" name="accent_color" value="#06d6a0">
+                            <span class="create-color-swatch create-color-swatch-green"></span>
+                        </label>
+                        <label class="create-color-option">
+                            <input type="radio" name="accent_color" value="#f4978e">
+                            <span class="create-color-swatch create-color-swatch-pink"></span>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <button class="create-submit" type="submit">Create &amp; Spin Wheel</button>
+            </form>
+        </section>
+    </main>
+
+    <nav class="mobile-dock" aria-label="Mobile navigation">
+        <button class="mobile-dock-item" type="button" aria-label="Current wheel" data-mobile-link="./index.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="7.5" fill="none" stroke="currentColor" stroke-width="2.4"></circle>
+                <circle cx="12" cy="12" r="1.8" fill="currentColor"></circle>
+            </svg>
+        </button>
+        <button class="mobile-dock-item" type="button" aria-label="Presets" data-mobile-link="./persets.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3.5" y="3.5" width="6" height="6" rx="1.2" fill="none" stroke="currentColor" stroke-width="2"></rect>
+                <rect x="14.5" y="3.5" width="6" height="6" rx="1.2" fill="none" stroke="currentColor" stroke-width="2"></rect>
+                <rect x="3.5" y="14.5" width="6" height="6" rx="1.2" fill="none" stroke="currentColor" stroke-width="2"></rect>
+                <rect x="14.5" y="14.5" width="6" height="6" rx="1.2" fill="none" stroke="currentColor" stroke-width="2"></rect>
+            </svg>
+        </button>
+        <button class="mobile-dock-item" type="button" aria-label="History" data-mobile-link="./history.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 6v5h5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M6.4 15.7A8 8 0 1 0 7 8.8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </button>
+        <button class="mobile-dock-item mobile-dock-item-active" type="button" aria-label="Create new" data-mobile-link="./new-fate.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 4v16M4 12h16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"></path>
+            </svg>
+        </button>
+    </nav>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

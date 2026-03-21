@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FateSPINNER</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;700;800&family=Spline+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-page="wheel">
+    <nav>
+        <a href="./index.html" class="logo"><img src="./img/Group.png" alt="">Fate<span>SPINNER</span></a>
+        <ul>
+            <li><a href="./index.html" class="nav-link nav-link-active">My Wheel</a></li>
+            <li><a href="./persets.html" class="nav-link">Presets</a></li>
+            <li><a href="./history.html" class="nav-link">History</a></li>
+            <li><a href="./new-fate.html" class="nav-link">Create New</a></li>
+        </ul>
+        <button class="new-fate" type="button">Spin New Fate</button>
+    </nav>
+    <main>
+        <div class="bg-cluster" aria-hidden="true">
+            <div class="bg-circle bg-circle-orange"></div>
+            <div class="bg-circle bg-circle-yellow"></div>
+            <div class="bg-circle bg-circle-blue"></div>
+        </div>
+
+        <section class="dashboard">
+            <div class="left-column">
+                <div class="card">
+                    <p class="card-label">Active Decision</p>
+                    <h1 class="card-title" id="decision-title">Restaurant <span>Names</span></h1>
+                    <p class="card-text" id="decision-description">Let destiny choose your establishment's identity</p>
+                    <button class="card-reset" type="button">
+                        <span class="card-reset-icon"><img src="./img/SVG.png" alt=""></span>
+                        <span>Reset Wheel</span>
+                    </button>
+                </div>
+
+                <div class="current-options">
+                    <div class="options-header">
+                        <p class="options-title" id="options-panel-title">Current Options</p>
+                        <span class="options-count">8 Items</span>
+                    </div>
+                    <div class="options-list">
+                        <div class="option-row" data-label="The Golden Spoon" data-color="#ff7a45">
+                            <span class="option-dot dot-orange"></span>
+                            <span class="option-text">The Golden Spoon</span>
+                            <button class="option-remove" type="button" aria-label="Remove The Golden Spoon">-</button>
+                        </div>
+                        <div class="option-row" data-label="Midnight Kitchen" data-color="#4d6aff">
+                            <span class="option-dot dot-blue"></span>
+                            <span class="option-text">Midnight Kitchen</span>
+                            <button class="option-remove" type="button" aria-label="Remove Midnight Kitchen">-</button>
+                        </div>
+                        <div class="option-row" data-label="Saffron &amp; Stone" data-color="#2ec4a6">
+                            <span class="option-dot dot-green"></span>
+                            <span class="option-text">Saffron &amp; Stone</span>
+                            <button class="option-remove" type="button" aria-label="Remove Saffron and Stone">-</button>
+                        </div>
+                        <div class="option-row" data-label="Copper Pot" data-color="#f4c95d">
+                            <span class="option-dot dot-yellow"></span>
+                            <span class="option-text">Copper Pot</span>
+                            <button class="option-remove" type="button" aria-label="Remove Copper Pot">-</button>
+                        </div>
+                        <div class="option-row" data-label="Ironwood Grill" data-color="#e78dd0">
+                            <span class="option-dot dot-pink"></span>
+                            <span class="option-text">Ironwood Grill</span>
+                            <button class="option-remove" type="button" aria-label="Remove Ironwood Grill">-</button>
+                        </div>
+                        <div class="option-row" data-label="Harbor &amp; Vine" data-color="#ff7a45">
+                            <span class="option-dot dot-orange"></span>
+                            <span class="option-text">Harbor &amp; Vine</span>
+                            <button class="option-remove" type="button" aria-label="Remove Harbor and Vine">-</button>
+                        </div>
+                        <div class="option-row" data-label="Silk Road" data-color="#4d6aff">
+                            <span class="option-dot dot-blue"></span>
+                            <span class="option-text">Silk Road</span>
+                            <button class="option-remove" type="button" aria-label="Remove Silk Road">-</button>
+                        </div>
+                        <div class="option-row" data-label="The Hearth" data-color="#2ec4a6">
+                            <span class="option-dot dot-green"></span>
+                            <span class="option-text">The Hearth</span>
+                            <button class="option-remove" type="button" aria-label="Remove The Hearth">-</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wheel-stage">
+                <div class="wheel-container">
+                    <div class="arrow" aria-hidden="true"></div>
+                    <canvas id="wheel" width="730" height="730"></canvas>
+                    <button class="center-button" id="spin-button" type="button">
+                        <span class="center-button-kicker">CLICK TO</span>
+                        <span class="center-button-main">SPIN ME</span>
+                    </button>
+                </div>
+                <div class="illustration-panel" aria-hidden="true">
+                    <img src="./img/Group 3.png" alt="">
+                </div>
+            </div>
+        </section>
+    </main>
+    <nav class="mobile-dock" aria-label="Mobile navigation">
+        <button class="mobile-dock-item mobile-dock-item-active" type="button" aria-label="Current wheel" data-mobile-link="./index.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="7.5" fill="none" stroke="currentColor" stroke-width="2.4"></circle>
+                <circle cx="12" cy="12" r="1.8" fill="currentColor"></circle>
+            </svg>
+        </button>
+        <button class="mobile-dock-item" type="button" aria-label="Presets" data-mobile-link="./persets.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3.5" y="3.5" width="6" height="6" rx="1.2" fill="none" stroke="currentColor" stroke-width="2"></rect>
+                <rect x="14.5" y="3.5" width="6" height="6" rx="1.2" fill="none" stroke="currentColor" stroke-width="2"></rect>
+                <rect x="3.5" y="14.5" width="6" height="6" rx="1.2" fill="none" stroke="currentColor" stroke-width="2"></rect>
+                <rect x="14.5" y="14.5" width="6" height="6" rx="1.2" fill="none" stroke="currentColor" stroke-width="2"></rect>
+            </svg>
+        </button>
+        <button class="mobile-dock-item" type="button" aria-label="History" data-mobile-link="./history.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 6v5h5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M6.4 15.7A8 8 0 1 0 7 8.8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </button>
+        <button class="mobile-dock-item" type="button" aria-label="Create new" data-mobile-link="./new-fate.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 4v16M4 12h16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"></path>
+            </svg>
+        </button>
+    </nav>
+
+    <div class="result-modal" id="result-modal" aria-hidden="true">
+        <div class="result-modal-backdrop" data-close-modal="true"></div>
+        <div class="result-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="result-title">
+            <p class="result-modal-kicker">THE FATES HAVE SPOKEN</p>
+            <h2 class="result-modal-title" id="result-title">Ironwood Grill</h2>
+            <div class="result-modal-actions">
+                <button class="result-modal-button result-modal-button-primary" id="accept-fate" type="button">Accept Your Fate</button>
+                <button class="result-modal-button result-modal-button-secondary" id="spin-again" type="button">Spin Again</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
